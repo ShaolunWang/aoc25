@@ -1,0 +1,5 @@
+compile_commands.json
+.cache/
+.jj/
+build/
+build_release/
