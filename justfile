@@ -1,4 +1,5 @@
-day := "day01"
+day := "day02"
+test_day :="Day02"
 @print:
 	echo $(just --list)
 conf:
@@ -12,5 +13,5 @@ release_build:
 clean:
 	rm -rf build/ build_release
 test:
-	cd build && GTEST_COLOR=1 ctest -V
+	cd build && GTEST_COLOR=1 ctest -V -R {{test_day}}
 

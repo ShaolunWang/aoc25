@@ -1,12 +1,28 @@
+#include <cstdint>
+#include <future>
+#include <utility>
+#include <vector>
 class Day02Solution {
 public:
   Day02Solution() = default;
-  static constexpr const char *m_filename = "input/day02.txt";
-
-  int getResultPart1() const { return m_result1; }
-  int getResultPart2() const { return m_result2; }
+  void parseInput();
+  void SolvePart1();
+  void SolvePart2();
+  uint64_t getResultPart1() const { return m_result1; }
+  uint64_t getResultPart2() const { return m_result2; }
+#ifdef TEST
+  void setInput(const std::vector<std::pair<uint64_t, uint64_t>> &_input) {
+    m_input = _input;
+  }
+#endif
 
 private:
-  int m_result1{0};
-  int m_result2{0};
+  static constexpr const char *m_filename = "input/day02.txt";
+  uint64_t m_result1{0};
+  uint64_t m_result2{0};
+  std::vector<std::pair<uint64_t, uint64_t>> m_input;
+
+  static uint64_t iterOverRange(uint64_t a, uint64_t b);
+
+  std::vector<std::future<uint64_t>> m_futures;
 };
