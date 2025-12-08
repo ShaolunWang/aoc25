@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 env:
-  DEBUG_TYPE: Debug
+  DEBUG_TYPE: DEBUG
 
 jobs:
   build:
