@@ -22,7 +22,9 @@ private:
   uint64_t m_result2{0};
   std::vector<std::pair<uint64_t, uint64_t>> m_input;
 
-  static uint64_t iterOverRange(uint64_t a, uint64_t b);
+  static uint64_t iterOverRangePart1(uint64_t a, uint64_t b);
+  static uint64_t iterOverRangePart2(uint64_t a, uint64_t b);
 
-  std::vector<std::future<uint64_t>> m_futures;
+  std::vector<std::future<uint64_t>> m_futuresP1;
+  std::vector<std::future<uint64_t>> m_futuresP2;
 };
