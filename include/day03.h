@@ -1,4 +1,5 @@
 #include <array>
+#include <future>
 #include <vector>
 class Day03Solution {
 public:
@@ -18,4 +19,7 @@ private:
   int m_result2{0};
   static constexpr const char *m_filename = "input/day03.txt";
   std::vector<std::vector<int>> m_input;
+  static int iterOverRangePart1(std::vector<int> _vec);
+
+  std::vector<std::future<int>> m_futuresP1;
 };
