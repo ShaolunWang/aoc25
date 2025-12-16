@@ -52,10 +52,17 @@ TEST(Day03, Sum) {
   ASSERT_EQ(99 + 12 + 23, sol.getResultPart1());
 }
 TEST(Day03, LastDigit) {
-
   Day03Solution sol;
   std::vector<std::vector<int>> _input = {{1, 1, 2, 4, 1, 1, 2}};
   sol.setInput(_input);
   sol.SolvePart1();
   ASSERT_EQ(42, sol.getResultPart1());
+}
+TEST(Day03, SamplePt2) {
+
+  Day03Solution sol;
+  sol.parseInput();
+  sol.SolvePart2();
+
+  ASSERT_EQ(3121910778619, sol.getResultPart2());
 }
