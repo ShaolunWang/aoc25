@@ -10,7 +10,7 @@ public:
   void SolvePart2();
   uint64_t getResultPart1() const { return m_result1; }
   uint64_t getResultPart2() const { return m_result2; }
-#ifdef TEST
+#ifdef DEBUGTEST
   void setInput(const std::vector<std::pair<uint64_t, uint64_t>> &_input) {
     m_input = _input;
   }

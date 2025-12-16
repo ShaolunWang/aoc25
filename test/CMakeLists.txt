@@ -27,11 +27,10 @@ if(CMAKE_BUILD_TYPE MATCHES DEBUG)
 
         if(EXISTS ${day_src_path})
             add_executable(${test_name} ${test_src} ${day_src_path})
-			target_compile_definitions(${test_name} PRIVATE TEST)
+			target_compile_definitions(${test_name} PRIVATE DEBUGTEST)
             target_include_directories(${test_name} PUBLIC ${PROJECT_SOURCE_DIR}/include)
             target_link_libraries(${test_name} PRIVATE fmt::fmt GTest::gtest_main)
             gtest_discover_tests(${test_name} DISCOVERY_ARGS "--gtest_color=yes" )
-    
         else()
             message(WARNING "No source file found for ${test_name}: expected ${day_src_path}")
         endif()

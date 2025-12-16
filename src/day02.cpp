@@ -78,7 +78,7 @@ uint64_t Day02Solution::iterOverRangePart2(uint64_t a, uint64_t b) {
       for (auto splitSize = window; splitSize <= s.size() - window;
            splitSize += window) {
         // fmt::println("splitSize: {} | window: {} :substr: {}", splitSize,
-                     // window, s.substr(splitSize, window));
+        // window, s.substr(splitSize, window));
         if (s.substr(splitSize, window) != base) {
           // fmt::println("invalid.");
           allMatches = false;
@@ -115,7 +115,7 @@ void Day02Solution::SolvePart2() {
 #endif
 }
 
-#ifndef TEST
+#ifndef DEBUGTEST
 int main() {
   Day02Solution sol;
   sol.parseInput();

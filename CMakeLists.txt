@@ -8,6 +8,9 @@ project(
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXE_LINKER_FLAGS_INIT "-fuse-ld=mold")
+set(CMAKE_SHARED_LINKER_FLAGS_INIT "-fuse-ld=mold")
+set(CMAKE_MODULE_LINKER_FLAGS_INIT "-fuse-ld=mold")
 
 include(CheckIPOSupported)
 check_ipo_supported(RESULT supported OUTPUT error)
@@ -20,8 +23,10 @@ else()
 endif()
 
 if(CMAKE_BUILD_TYPE MATCHES DEBUG)
+	# need this to enable debugging
+	set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 	add_compile_options(-fsanitize=address,undefined -g)
-	add_link_options(-fsanitize=address,undefined)
+	add_link_options(-fsanitize=address,undefined -g)
 endif()
 
 

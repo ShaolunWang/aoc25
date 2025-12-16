@@ -74,7 +74,7 @@ void Day01Solution::Simulate() {
   }
 }
 
-#ifndef TEST
+#ifndef DEBUGTEST
 int main() {
   Day01Solution sol;
   sol.ReadFromFile();

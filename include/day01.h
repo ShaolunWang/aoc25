@@ -12,7 +12,7 @@ public:
   int getResultPart1() const { return m_result1; }
   int getResultPart2() const { return m_result2; }
 
-#ifdef TEST
+#ifdef DEBUGTEST
   void setFormattedInput(std::vector<std::tuple<char, int>> _input) {
     m_input = _input;
   }

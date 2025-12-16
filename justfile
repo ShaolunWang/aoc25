@@ -1,5 +1,5 @@
-day := "day02"
-test_day :="Day02"
+day := "day03"
+test_day :="Day03"
 @print:
 	echo $(just --list)
 conf:
@@ -11,7 +11,8 @@ release:
 release_build:
 	cmake --build build_release 
 clean:
-	rm -rf build/ build_release
+	cd build && ninja clean; cd ../build_release && ninja clean
 test:
 	cd build && GTEST_COLOR=1 ctest -V -R {{test_day}}
-
+run:
+	./build_release/src/{{day}}
